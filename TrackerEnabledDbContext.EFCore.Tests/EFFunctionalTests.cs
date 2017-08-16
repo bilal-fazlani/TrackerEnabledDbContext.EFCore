@@ -52,7 +52,7 @@ namespace TrackerEnabledDbContext.EFCore.Tests
             parent.Id.AssertIsNotZeroOrNegative();
         }
 
-        [TestMethod, Ignore("waiting for fix of https://github.com/aspnet/EntityFramework/issues/9413")]
+        [TestMethod, Ignore("this won't work in EF Core - By design https://github.com/aspnet/EntityFramework/issues/9413")]
         public void Can_save_child_to_parent_when_entity_state_changed()
         {
             ChildModel child = new ChildModel();
@@ -60,6 +60,21 @@ namespace TrackerEnabledDbContext.EFCore.Tests
             child.Parent = parent;
 
             Db.Entry(child).State = EntityState.Added;
+
+            Db.SaveChanges();
+
+            child.Id.AssertIsNotZeroOrNegative();
+            parent.Id.AssertIsNotZeroOrNegative();
+        }
+
+        [TestMethod]
+        public void Can_save_child_to_parent_when_added_directly_to_context()
+        {
+            ChildModel child = new ChildModel();
+            ParentModel parent = new ParentModel();
+            child.Parent = parent;
+
+            Db.Add(child);
 
             Db.SaveChanges();
 

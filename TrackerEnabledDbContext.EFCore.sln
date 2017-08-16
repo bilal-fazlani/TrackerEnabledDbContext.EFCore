@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackerEnabledDbContext.EFCore", "TrackerEnabledDbContext.EFCore\TrackerEnabledDbContext.EFCore.csproj", "{553FFFAF-8E86-4544-B1B7-CCC6B7CF217A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerEnabledDbContext.EFCore.Tests", "TrackerEnabledDbContext.EFCore.Tests\TrackerEnabledDbContext.EFCore.Tests.csproj", "{2B62EA8C-5B51-49EF-937D-73496485B6E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackerEnabledDbContext.EFCore.Tests", "TrackerEnabledDbContext.EFCore.Tests\TrackerEnabledDbContext.EFCore.Tests.csproj", "{2B62EA8C-5B51-49EF-937D-73496485B6E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{19B32CF4-32F2-4183-B69C-A2779BBBFD11}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
